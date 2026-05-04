@@ -1,11 +1,10 @@
-<!-- redeploy -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>LexFin v3</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+
 <style>
   :root {
     --bg: #030305;
@@ -40,6 +39,7 @@
     overflow: hidden;
     filter: blur(100px);
     opacity: 0.4;
+    pointer-events: none;
   }
   .blob {
     position: absolute;
@@ -64,6 +64,7 @@
     backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--glass-border);
     z-index: 10;
+    position: relative;
   }
 
   .logo {
@@ -86,6 +87,8 @@
     transition: 0.3s;
     text-transform: uppercase;
     letter-spacing: 1px;
+    position: relative;
+    z-index: 20;
   }
 
   .btn-glass:hover {
@@ -100,6 +103,8 @@
     display: flex;
     gap: 12px;
     overflow-x: auto;
+    position: relative;
+    z-index: 10;
   }
   .chips-container::-webkit-scrollbar { display: none; }
 
@@ -113,6 +118,8 @@
     cursor: pointer;
     transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 20;
   }
 
   .chip:hover {
@@ -131,6 +138,8 @@
     justify-content: center;
     padding: 40px;
     overflow-y: auto;
+    position: relative;
+    z-index: 10;
   }
 
   .hero-text {
@@ -171,6 +180,7 @@
     cursor: pointer;
     transition: 0.4s;
     position: relative;
+    z-index: 20;
     overflow: hidden;
   }
 
@@ -201,6 +211,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 100;
   }
 
   .input-box {
@@ -216,6 +228,8 @@
     gap: 15px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     transition: 0.3s;
+    position: relative;
+    z-index: 100;
   }
 
   .input-box:focus-within {
@@ -237,7 +251,8 @@
   }
 
   .send-btn {
-    width: 45px; height: 45px;
+    width: 45px; 
+    height: 45px;
     background: var(--gold);
     border: none;
     border-radius: 15px;
@@ -248,9 +263,14 @@
     justify-content: center;
     transition: 0.3s;
     box-shadow: 0 5px 15px var(--gold-glow);
+    position: relative;
+    z-index: 101;
+    pointer-events: auto;
   }
 
-  .send-btn:hover { transform: scale(1.1) rotate(-5deg); }
+  .send-btn:hover { 
+    transform: scale(1.1) rotate(-5deg); 
+  }
 
   /* Mobile */
   @media (max-width: 768px) {
